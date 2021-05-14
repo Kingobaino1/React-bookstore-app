@@ -1,5 +1,4 @@
-const CREATE_BOOK = 'CREATE_BOOK';
-const REMOVE_BOOK = 'REMOVE_BOOK';
+import { addBook, removeBook } from '../actions/index';
 
 const defaultBook = [
   { id: 1, title: 'Things fall apart', category: 'History' },
@@ -9,9 +8,9 @@ const defaultBook = [
 
 const bookReducer = (state = defaultBook, action) => {
   switch (action.type) {
-    case CREATE_BOOK:
+    case addBook.type:
       return [...state, action.payload];
-    case REMOVE_BOOK:
+    case removeBook.type:
       return state.filter((book) => book.id !== action.payload.id);
     default:
       return state;

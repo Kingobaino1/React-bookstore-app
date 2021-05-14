@@ -8,13 +8,7 @@ const BooksForm = () => {
       <label htmlFor="categories">
         Select your favorite book in the following category:
         <select id="categories">
-          <option value="biography">{bookCat[0]}</option>
-          <option value="history">{bookCat[1]}</option>
-          <option value="horror">{bookCat[2]}</option>
-          <option value="kids">{bookCat[3]}</option>
-          <option value="learning">{bookCat[4]}</option>
-          <option value="sci-fi">{bookCat[5]}</option>
-          <option value="sport">{bookCat[6]}</option>
+          {bookCat.map((item, index) => (<option key={index.toString()} value="biography">{item}</option>))}
         </select>
       </label>
       <input type="submit" value="Submit" />

@@ -28,9 +28,7 @@ const BooksList = () => {
         <th>Title</th>
         <th>Category</th>
       </tr>
-      <Book book={books[0]} />
-      <Book book={books[1]} />
-      <Book book={books[2]} />
+      {books.map((item) => (<Book key={item.id} book={item} />))}
     </table>
   );
 };
