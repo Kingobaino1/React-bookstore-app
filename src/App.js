@@ -7,7 +7,7 @@ function App() {
       <BooksList />
       <BooksForm />
     </div>
-  )  
+  );
 }
 
 export default App;
