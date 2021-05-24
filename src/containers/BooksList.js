@@ -1,6 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import Book from '../components/Book';
+import { removeBook } from '../actions/index';
 
 const BooksList = () => {
   const books = [
@@ -21,14 +22,26 @@ const BooksList = () => {
     },
   ];
 
+  const dispatch = useDispatch();
+
+  const handleRemoveBook = (book) => {
+    dispatch(removeBook(book));
+  };
+
   return (
     <table>
-      <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Category</th>
-      </tr>
-      {books.map((item) => (<Book key={item.id} book={item} />))}
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      {
+      books
+        .map((item) => (
+          <Book key={item.title} book={item} handleRemoveBook={handleRemoveBook} />))
+          }
     </table>
   );
 };
