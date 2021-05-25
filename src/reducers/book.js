@@ -1,16 +1,16 @@
-import { addBook, removeBook } from '../actions/index';
+import { v4 as uuidv4 } from 'uuid';
 
 const defaultBook = [
-  { id: 1, title: 'Things fall apart', category: 'History' },
-  { id: 2, title: 'There was a country', category: 'Biography' },
-  { id: 3, title: 'Harry Potter', category: 'Horror' },
+  { id: uuidv4(), title: 'Things fall apart', category: 'History' },
+  { id: uuidv4(), title: 'There was a country', category: 'Biography' },
+  { id: uuidv4(), title: 'Harry Potter', category: 'Horror' },
 ];
 
 const bookReducer = (state = defaultBook, action) => {
   switch (action.type) {
-    case addBook.type:
+    case 'CREATE_BOOK':
       return [...state, action.payload];
-    case removeBook.type:
+    case 'REMOVE_BOOK':
       return state.filter((book) => book.id !== action.payload.id);
     default:
       return state;

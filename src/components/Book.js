@@ -3,7 +3,6 @@ import React from 'react';
 
 const Book = ({ book, handleRemoveBook }) => (
   <tr>
-    <td>{book.id}</td>
     <td>{book.title}</td>
     <td>{book.category}</td>
     <td><button type="button" onClick={() => handleRemoveBook(book)}>Remove Book</button></td>
@@ -11,7 +10,8 @@ const Book = ({ book, handleRemoveBook }) => (
 );
 
 Book.propTypes = {
-  book: PropTypes.objectOf(PropTypes.object).isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  book: PropTypes.object.isRequired,
   handleRemoveBook: PropTypes.func.isRequired,
 };
 
