@@ -61,7 +61,7 @@ const BooksForm = () => {
             </select>
           </div>
         </label>
-        <input type="submit" className="" value="Submit" />
+        <input type="submit" className="btn btn-primary" value="Add Book" />
       </form>
     </>
   );
