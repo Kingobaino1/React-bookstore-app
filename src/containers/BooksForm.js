@@ -7,7 +7,8 @@ const BooksForm = () => {
   const [book, setBook] = useState(
     {
       title: '',
-      category: 'Biography',
+      category: '',
+      author: '',
     },
   );
 
@@ -25,6 +26,13 @@ const BooksForm = () => {
     });
   };
 
+  const handleAuthorSelect = ({ target: { value } }) => {
+    setBook({
+      ...book,
+      author: value,
+    });
+  };
+
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -34,22 +42,28 @@ const BooksForm = () => {
       id: uuidv4(),
       title: '',
       category: '',
+      author: '',
     });
   };
 
   const bookCat = ['Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi', 'Sport'];
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={book.title} onChange={handleInput} name="title" placeholder="Title" />
-      <label htmlFor="categories">
-        Select your favorite book in the following category:
-        <select id="categories" value={book.category} onChange={handleSelect} name="category">
-          {bookCat.map((item) => (
-            <option key={item} value={item}>{item}</option>))}
-        </select>
-      </label>
-      <input type="submit" value="Submit" />
-    </form>
+    <>
+      <div className="container"><h1 className="text-secondary">ADD BOOK</h1></div>
+      <form onSubmit={handleSubmit} className="m-3 d-flex justify-content-between container">
+        <input type="text" className="" value={book.title} onChange={handleInput} name="title" placeholder="Title" />
+        <input type="text" className="" value={book.author} onChange={handleAuthorSelect} name="title" placeholder="Author" />
+        <label htmlFor="categories">
+          <div>
+            <select id="categories" value={book.category} onChange={handleSelect} name="category">
+              {bookCat.map((item) => (
+                <option key={item} value={item}>{item}</option>))}
+            </select>
+          </div>
+        </label>
+        <input type="submit" className="" value="Submit" />
+      </form>
+    </>
   );
 };
 

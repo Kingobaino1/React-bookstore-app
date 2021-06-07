@@ -3,6 +3,7 @@ import { connect, useDispatch, useSelector } from 'react-redux';
 import Book from '../components/Book';
 import { removeBook, changeFilter } from '../actions/index';
 import CategoryFilter from '../components/CategoryFilter';
+import Header from '../components/Header';
 
 const BooksList = () => {
   const books = useSelector((state) => (state.bookReducer));
@@ -19,25 +20,20 @@ const BooksList = () => {
 
   return (
     <>
-      <CategoryFilter
-        value={books.map((item) => item.category)}
-        handleFilterChange={handleFilterChange}
-      />
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
+      <div className="">
+        <Header />
+        <CategoryFilter
+          value={books.map((item) => item.category)}
+          handleFilterChange={handleFilterChange}
+        />
+        <div>
           {
             books.filter((book) => (categories === 'All' ? books : book.category === categories))
               .map((item) => (
                 <Book key={item.title} book={item} handleRemoveBook={handleRemoveBook} />))
           }
-        </tbody>
-      </table>
+        </div>
+      </div>
     </>
   );
 };
