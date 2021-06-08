@@ -25,3 +25,29 @@ code {
     "Courier New",
     monospace;
 }
+
+.text-blue {
+  color: #0290ff;
+  text-align: center;
+}
+
+.underline {
+  border-bottom: 2px solid darkgray;
+}
+
+.book {
+  border: 2px solid darkgray;
+}
+
+.col {
+  color: gray;
+}
+
+.w {
+  width: 80%;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+}

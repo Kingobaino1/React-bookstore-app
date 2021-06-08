@@ -2,7 +2,7 @@
 
 > This is an app that helps organize and manage a bookstore of a fiction company
 
-![screenshot]()
+![screenshot](./src/Img/react-book.png)
 
 ## Built With
 
@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-[Live Demo](https://reactjs-bookstore-app.netlify.app/)
+[Live Demo](https://react-js-bookstore.netlify.app/)
 
 ## Getting Started
 
@@ -42,13 +42,6 @@ $ npm start
 
 Then open localhost:3000 in your web browser.
 
-## Testing
-
-To run the integration Tests locally using Jest, just type the following commands over the terminal in Linux or Mac or the Windows cmd console:
-
-```
-npm test
-```
 
 ## Author
 
