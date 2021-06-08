@@ -49,19 +49,19 @@ const BooksForm = () => {
   const bookCat = ['Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi', 'Sport'];
   return (
     <>
-      <div className="container"><h1 className="text-secondary">ADD BOOK</h1></div>
-      <form onSubmit={handleSubmit} className="m-3 d-flex justify-content-between container">
-        <input type="text" className="" value={book.title} onChange={handleInput} name="title" placeholder="Title" />
-        <input type="text" className="" value={book.author} onChange={handleAuthorSelect} name="title" placeholder="Author" />
+      <div className="container w-25 mx-auto"><h1 className="text-secondary">ADD BOOK</h1></div>
+      <form onSubmit={handleSubmit} className="mx-auto d-flex container w m-3">
+        <input type="text" className="m-3 w" value={book.title} onChange={handleInput} name="title" placeholder="Title" />
+        <input type="text" className="m-3 w" value={book.author} onChange={handleAuthorSelect} name="title" placeholder="Author" />
         <label htmlFor="categories">
-          <div>
+          <div className="m-4">
             <select id="categories" value={book.category} onChange={handleSelect} name="category">
               {bookCat.map((item) => (
                 <option key={item} value={item}>{item}</option>))}
             </select>
           </div>
         </label>
-        <input type="submit" className="btn btn-primary" value="Add Book" />
+        <input type="submit" className="btn btn-primary m-3" value="Add Book" />
       </form>
     </>
   );

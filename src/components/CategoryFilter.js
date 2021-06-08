@@ -4,11 +4,8 @@ import React from 'react';
 const CategoryFilter = ({ handleFilterChange }) => {
   const filter = ['All', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi', 'Sport'];
   return (
-    <label htmlFor="categories" className="d-flex justify-content-between select">
-      <div className="m-3">
-        Select category
-      </div>
-      <div className="m-3">
+    <label htmlFor="categories" className="d-flex justify-content-between">
+      <div className="">
         <select id="filter" onChange={(e) => handleFilterChange(e.target.value)}>
           {filter.map((item) => (
             <option

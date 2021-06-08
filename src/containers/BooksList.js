@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import Book from '../components/Book';
-import { removeBook, changeFilter } from '../actions/index';
-import CategoryFilter from '../components/CategoryFilter';
+import { removeBook } from '../actions/index';
 import Header from '../components/Header';
 
 const BooksList = () => {
@@ -14,18 +13,10 @@ const BooksList = () => {
     dispatch(removeBook(book));
   };
 
-  const handleFilterChange = (category) => {
-    dispatch(changeFilter(category));
-  };
-
   return (
     <>
       <div className="">
         <Header />
-        <CategoryFilter
-          value={books.map((item) => item.category)}
-          handleFilterChange={handleFilterChange}
-        />
         <div>
           {
             books.filter((book) => (categories === 'All' ? books : book.category === categories))

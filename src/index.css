@@ -27,7 +27,7 @@ code {
 }
 
 .text-blue {
-  color: blue;
+  color: #0290ff;
   text-align: center;
 }
 
@@ -35,11 +35,19 @@ code {
   border-bottom: 2px solid darkgray;
 }
 
-.select,
 .book {
   border: 2px solid darkgray;
 }
 
 .col {
-  color: #4386bf;
+  color: gray;
+}
+
+.w {
+  width: 80%;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
 }
